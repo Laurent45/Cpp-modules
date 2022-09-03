@@ -6,24 +6,33 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 14:31:14 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/02 19:31:17 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/03 12:45:37 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PhoneBook.hpp"
+#include <string>
+#include <iostream>
 
 int main(void)
 {
-	PhoneBook phoneBook;
+	PhoneBook	phoneBook;
+	std::string	input;
 
-	for (int i = 0; i < CONTACT_MAX + 1; i++)
+	do 
 	{
-		phoneBook.addContact();
-		std::cout << std::endl;
-		phoneBook.search();
-		std::cout << std::endl;
-	}
+		std::cout << "\n***************************************" << std::endl;
+		std::cout << "Enter a command (ADD, SEARCH or EXIT): ";
+		std::getline(std::cin, input);
+		if (input.compare("ADD") == 0)
+			phoneBook.addContact();
+		else if (input.compare("SEARCH") == 0)
+			phoneBook.search();
+		else if (input.compare("EXIT") == 0)
+			std::cout << "Bye bye!" << std::endl;
+		else
+			std::cout << "Command unknown, retry" << std::endl;
+	} while (input.compare("EXIT") != 0);
 
 	return 0;
 }
