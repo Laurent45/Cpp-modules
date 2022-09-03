@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 13:22:11 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/03 10:57:07 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/03 13:29:14 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Contact.hpp"
 #include <string>
 
-#define CONTACT_MAX 2
+#define CONTACT_MAX 8
 
 class PhoneBook
 {
