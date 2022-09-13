@@ -6,7 +6,7 @@
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 15:42:54 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/13 18:34:56 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/13 18:36:54 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 #include <string>
 
+#define N_ZOMBIE	15
+#define	ZOMBIE_NAME	"Foo"
+
 /* ************************************************************************** */
-/*									CLASS									  */
+/*									ZOMBIE									  */
 /*																			  */
 /* ************************************************************************** */
 
@@ -25,8 +28,10 @@ class Zombie
 
 	public:
 
-		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
+
+		void	setName(std::string name);
 
 		void	announce(void) const;
 
@@ -36,7 +41,6 @@ class Zombie
 
 };
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif

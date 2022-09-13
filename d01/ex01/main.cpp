@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 15:52:01 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/13 18:35:32 by lfrederi         ###   ########.fr       */
+/*   Created: 2022/09/05 16:09:49 by lfrederi          #+#    #+#             */
+/*   Updated: 2022/09/13 18:38:26 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string name) : _name(name)
+int main(void)
 {
-	std::cout << this->_name << " is created" << std::endl;
-}
+	Zombie	*zombies = zombieHorde(N_ZOMBIE, ZOMBIE_NAME);
+	for (int i = 0; i < N_ZOMBIE; i++)
+	{
+		std::cout << "index (" << i << ") ";
+		zombies[i].announce();
+	}
 
-Zombie::~Zombie(void)
-{
-	std::cout << this->_name << " called his destructor" << std::endl;
-}
+	delete [] zombies;
 
-void	Zombie::announce(void) const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return (0);
 }
