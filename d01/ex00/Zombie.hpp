@@ -6,7 +6,7 @@
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 15:42:54 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/05 16:08:17 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:12:36 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Zombie
 		Zombie(std::string name);
 		~Zombie(void);
 
-		void	annonce(void) const;
+		void	announce(void) const;
 
 	private:
 		

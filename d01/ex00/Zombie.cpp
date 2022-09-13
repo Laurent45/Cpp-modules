@@ -6,7 +6,7 @@
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 15:52:01 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/05 16:19:04 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:12:49 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie::~Zombie(void)
 	std::cout << this->_name << " called his destructor" << std::endl;
 }
 
-void	Zombie::annonce(void) const
+void	Zombie::announce(void) const
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
