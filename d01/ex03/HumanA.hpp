@@ -6,14 +6,14 @@
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:48:26 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/13 18:54:44 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/14 09:25:30 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMAN_A_HPP
 #define HUMAN_A_HPP
 
-#include <Weapon.hpp>
+#include "Weapon.hpp"
 
 /* ************************************************************************** */
 /*									HUMAN_A									  */
@@ -25,14 +25,16 @@ class HumanA
 
 	public:
 
-		HumanA(Weapon &my_weapon);
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
 
-		void	attack(void);
+		void	attack(void) const;
 
 
 	private:
 
-		Weapon &_weapon;
+		std::string	_name;
+		Weapon		&_weapon;
 
 		HumanA(void);
 
