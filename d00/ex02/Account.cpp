@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 13:34:39 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/04 16:58:42 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:29:32 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,6 @@ void	Account::_displayTimestamp(void)
 		std::cout << "[XXXXXXXX_HHMMSS] " << std::endl;
 		return ;
 	}
-	currentTime = currentTime + (2 * 60 * 60); // 2 equal +2 hours
 	localTime = std::localtime(&currentTime);
 	std::strftime(timestamp, 20, "[%Y%m%d_%H%M%S] ", localTime);
 	std::cout << timestamp;
