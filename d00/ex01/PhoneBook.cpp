@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 13:22:06 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/03 13:12:51 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:19:35 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ void	PhoneBook::search(void) const
 		std::cout << "\n*************" << std::endl;
 		std::cout << "Enter index: ";
 		std::getline(std::cin, index);
+		if (!std::cin.good())
+		{
+			std::cout << "\nExit\n";
+			exit(0);
+		}
 		validIndex = _isValidIndex(index, &idx);
 		if (!validIndex)
 			std::cout << "Index or format incorrect, retry" << std::endl;
@@ -71,6 +76,11 @@ void	PhoneBook::_printContacts(void) const
 {
 	int	i = 0;
 
+	if (this->_contacts[0].getNickName().empty())
+	{
+		std::cout << "No contact saved" << std::endl;
+		return ;
+	}
 	std::cout << std::setw(10) << "INDEX" << "|";
 	std::cout << std::setw(10) << "FIRST NAME" << "|";
 	std::cout << std::setw(10) << "LAST NAME" << "|";
@@ -87,8 +97,6 @@ void	PhoneBook::_printContacts(void) const
 		std::cout << std::endl;
 		i++;
 	}
-	if (i == 0)
-		std::cout << "No contact saved" << std::endl;
 }
 
 void	PhoneBook::_printRule(std::string str) const
@@ -107,6 +115,11 @@ std::string		PhoneBook::_getContactField(std::string contactField) const
 	{
 		std::cout << contactField << " -> ";
 		std::getline(std::cin, field);
+		if (!std::cin.good())
+		{
+			std::cout << "\nExit\n";
+			exit(0);
+		}
 		if (field.empty())
 			std::cout << "Empty field is not allow" << std::endl;
 	} while (field.empty());

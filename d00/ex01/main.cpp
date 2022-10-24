@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 14:31:14 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/03 12:45:37 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:04:59 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int main(void)
 		std::cout << "\n***************************************" << std::endl;
 		std::cout << "Enter a command (ADD, SEARCH or EXIT): ";
 		std::getline(std::cin, input);
+		if (!std::cin.good())
+		{
+			std::cout << "\nExit\n";
+			return 0;
+		}
 		if (input.compare("ADD") == 0)
 			phoneBook.addContact();
 		else if (input.compare("SEARCH") == 0)
