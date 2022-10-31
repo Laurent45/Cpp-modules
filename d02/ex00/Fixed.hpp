@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 08:08:26 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/10/31 08:30:51 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:12:07 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ class Fixed
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 
-
 	private:
 		
 		int					_fixed_point;
 		static const int	_FRACT_BITS = FRACT_BITS;
-		
 
 };
 
