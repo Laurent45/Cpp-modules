@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 08:07:56 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/10/31 16:28:18 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:36:50 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ float	Fixed::toFloat(void) const
 
 int		Fixed::toInt(void) const
 {
-	return (this->_fixed_point >> Fixed::_FRACT_BITS);
+	return (roundf(this->toFloat()));
 }
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed) {

@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:52:54 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/10/31 14:52:36 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:35:44 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main( void ) {
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 
-	a = Fixed( 1234.4321f );
+	a = Fixed( 1234.5321f );
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
