@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 08:08:26 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/10/31 15:09:52 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:23:20 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class Fixed
 
 		Fixed(void);
 		Fixed(Fixed const & copy);
-		Fixed(const int fixed_point);
-		Fixed(const float fixed_point);
-		Fixed	&operator=(Fixed const & rhs);
+		Fixed(int const fixed_point);
+		Fixed(float const fixed_point);
+		Fixed &	operator=(Fixed const & rhs);
 		~Fixed(void);
 
 		int		getRawBits(void) const;
@@ -48,6 +48,6 @@ class Fixed
 
 };
 
-std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream &	operator<<(std::ostream & out, Fixed const & fixed);
 
 #endif
