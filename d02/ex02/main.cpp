@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 08:52:54 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/10/31 17:02:18 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/01 07:45:29 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,15 @@
 #include <iostream>
 
 int main( void ) {
-
 	Fixed a;
-	Fixed const b( 5 );
-	Fixed const c( 2 );
-	Fixed const d( 7.5f);
-
-	a = d / c;
-
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 	std::cout << a << std::endl;
-	std::cout << (a < d) << std::endl;
-	std::cout << (a > d) << std::endl;
-	std::cout << (a == d) << std::endl;
-	std::cout << (a != d) << std::endl;
-	std::cout << (a <= d) << std::endl;
-	std::cout << (a >= d) << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 
 	return 0;
 }
