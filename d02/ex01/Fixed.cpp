@@ -18,24 +18,24 @@
 /* ************************************************************************** */
 
 // Canonical form
-Fixed::Fixed(void) : _fixed_point(0)
+Fixed::Fixed(void) : _fixedPoint(0)
 {
 	std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(Fixed const & copy) : _fixed_point(copy._fixed_point)
+Fixed::Fixed(Fixed const & copy) : _fixedPoint(copy._fixedPoint)
 {
 	std::cout << "Copy constructor called\n";
 }
 
 Fixed::Fixed(int const fixed_point) 
-	: _fixed_point(fixed_point << Fixed::_FRACT_BITS)
+	: _fixedPoint(fixed_point << Fixed::_FRACT_BITS)
 {
 	std::cout << "Int constructor called\n";
 }
 
 Fixed::Fixed(float const fixed_point) 
-	: _fixed_point(roundf(fixed_point * (1 << Fixed::_FRACT_BITS))) 
+	: _fixedPoint(roundf(fixed_point * (1 << Fixed::_FRACT_BITS))) 
 {
 	std::cout << "Float constructor called\n";
 }
@@ -44,7 +44,7 @@ Fixed &	Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Copy assignment operator called\n";
 	if (this != &rhs)
-		this->_fixed_point = rhs._fixed_point;
+		this->_fixedPoint = rhs._fixedPoint;
 	return *this;
 }
 
@@ -57,18 +57,18 @@ Fixed::~Fixed(void)
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
-	return this->_fixed_point;
+	return this->_fixedPoint;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called\n";
-	this->_fixed_point = raw;
+	this->_fixedPoint = raw;
 }
 
 float	Fixed::toFloat(void) const
 {
-	return (this->_fixed_point / (float) (1 << Fixed::_FRACT_BITS));
+	return (this->_fixedPoint / (float) (1 << Fixed::_FRACT_BITS));
 }
 
 int		Fixed::toInt(void) const

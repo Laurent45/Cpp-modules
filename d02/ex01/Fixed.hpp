@@ -43,7 +43,7 @@ class Fixed
 
 	private:
 		
-		int					_fixed_point;
+		int					_fixedPoint;
 		static const int	_FRACT_BITS = FRACT_BITS;
 
 };
