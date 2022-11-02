@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 08:07:56 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/01 13:19:47 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:26:57 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Fixed::Fixed(Fixed const & copy) : _fixed_point(copy._fixed_point)
 Fixed	&Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Copy assignment operator called\n";
-	this->_fixed_point = rhs._fixed_point;
+	if (this != &rhs)
+		this->_fixed_point = rhs._fixed_point;
 	return *this;
 }
 
