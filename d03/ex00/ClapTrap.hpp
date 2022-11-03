@@ -6,16 +6,16 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:22:46 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 08:24:39 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/03 08:30:42 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAP_TRAP_HPP
 #define CLAP_TRAP_HPP
 
-#include <ostream>
 #include <string>
 #include <iostream>
+#include <climits>
 
 #define DEFAULT_HEALTH	10
 #define DEFAULT_ENERGY	10
