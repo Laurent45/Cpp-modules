@@ -18,8 +18,8 @@
 
 // Canonical form
 ClapTrap::ClapTrap(void) 
-	: _name("default"), _health(DEFAULT_HEALTH), _energyPoints(DEFAULT_ENERGY)
-	  , _attackDamage(DEFAULT_ATTACK)
+	: _name("default"), _health(CLAP_HEALTH), _energyPoints(CLAP_ENERGY)
+	  , _attackDamage(CLAP_ATTACK)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
@@ -51,8 +51,8 @@ ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs)
 
 // Constructors
 ClapTrap::ClapTrap(std::string const & name)
-	: _name(name), _health(DEFAULT_HEALTH), _energyPoints(DEFAULT_ENERGY)
-	  , _attackDamage(DEFAULT_ATTACK)
+	: _name(name), _health(CLAP_HEALTH), _energyPoints(CLAP_ENERGY)
+	  , _attackDamage(CLAP_ATTACK)
 {
 	std::cout << "ClapTrap constructor (name = " << name << ") called" << std::endl;
 }

@@ -17,9 +17,9 @@
 #include <iostream>
 #include <climits>
 
-#define DEFAULT_HEALTH	10
-#define DEFAULT_ENERGY	10
-#define	DEFAULT_ATTACK	0
+#define CLAP_HEALTH	10
+#define CLAP_ENERGY	10
+#define	CLAP_ATTACK	0
 
 class ClapTrap
 {
