@@ -6,12 +6,11 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:41:01 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/02 16:19:30 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/03 08:23:36 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <iostream>
 
 int main(void)
 {

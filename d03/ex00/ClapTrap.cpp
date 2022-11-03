@@ -6,11 +6,12 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:22:42 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/02 16:19:10 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/03 08:27:49 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include <climits>
 
 /* ************************************************************************** */
 //						           PUBLIC									  //
@@ -18,13 +19,14 @@
 
 // Canonical form
 ClapTrap::ClapTrap(void) 
-	: _name("default"), _points(10), _energyPoints(10), _attackDamage(0)
+	: _name("default"), _health(DEFAULT_HEALTH), _energyPoints(DEFAULT_ENERGY)
+	  , _attackDamage(DEFAULT_ATTACK)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & copy)
-	: _name(copy._name), _points(copy._points), _energyPoints(copy._energyPoints),
+	: _name(copy._name), _health(copy._health), _energyPoints(copy._energyPoints),
 	_attackDamage(copy._attackDamage)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
@@ -41,7 +43,7 @@ ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs)
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
-		this->_points = rhs._points;
+		this->_health = rhs._health;
 		this->_energyPoints = rhs._energyPoints;
 		this->_attackDamage = rhs._attackDamage;
 	}
@@ -50,7 +52,8 @@ ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs)
 
 // Constructors
 ClapTrap::ClapTrap(std::string const & name)
-	: _name(name), _points(10), _energyPoints(10), _attackDamage(0)
+	: _name(name), _health(DEFAULT_HEALTH), _energyPoints(DEFAULT_ENERGY)
+	  , _attackDamage(DEFAULT_ATTACK)
 {
 	std::cout << "ClapTrap constructor (name = " << name << ") called" << std::endl;
 }
@@ -75,11 +78,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name 
 			  << " called takeDamage(" << amount << ")" << std::endl;
 
-	if (this->_points == 0)
+	if (this->_health == 0)
 		std::cout << "ClapTrap " << this->_name << " is already dead" << std::endl;
 	else
 	{
-		this->_points = amount > this->_points ? 0 : this->_points - amount;
+		this->_health = amount > this->_health ? 0 : this->_health - amount;
 		std::cout << "ClapTrap " << this->_name << " takes "<< amount << " damages!"
 				  << std::endl;
 	}
@@ -93,12 +96,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (!canAct())
 		return ;
 	this->_energyPoints--;
-	this->_points += amount;
+	if (this->_health == UINT_MAX)
+		return ;
+	this->_health = (UINT_MAX - this->_health < amount) ? UINT_MAX : this->_health + amount;
 
-	std::cout << "ClapTrap " << this->_name << " won " << amount << " points!"
+	std::cout << "ClapTrap " << this->_name << " won " << amount << " health points!"
 			  << std::endl;
 }
-
 
 
 /* ************************************************************************** */
@@ -108,11 +112,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 // Members methods
 bool	ClapTrap::canAct(void) const
 {
-	if (this->_points > 0 && this->_energyPoints > 0)
+	if (this->_health > 0 && this->_energyPoints > 0)
 		return true;
-	(this->_points == 0) ? 
+	(this->_health == 0) ? 
 		std::cout << "ClapTrap " << this->_name << " can't do anything. It is dead"
-		: std::cout << "ClapTrap " << this->_name << " can't do anything. It doesn't have enough energy points";
+		: std::cout << "ClapTrap " << this->_name << " can't do anything. It doesn't have enough energy health";
 	std::cout << std::endl;
 	return false;
 }
@@ -121,12 +125,12 @@ bool	ClapTrap::canAct(void) const
 /* ************************************************************************** */
 //						           FUNCTIONS								  //
 /* ************************************************************************** */
+
 std::ostream & operator<<(std::ostream & out, ClapTrap const & clapTrap)
 {
-	out << "ClapTrap(" 
-		<< "name: " << clapTrap._name << ", "
-		<< "points: " << clapTrap._points << ", "
-		<< "energy points: " << clapTrap._energyPoints << ", "
+	out << "ClapTrap(name: " << clapTrap._name << ", "
+		<< "health: " << clapTrap._health << ", "
+	    << "energy points: " << clapTrap._energyPoints << ", "
 		<< "attack damage: " << clapTrap._attackDamage << ")"
 		<< std::endl;
 	return out;

@@ -6,15 +6,20 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:22:46 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/02 15:43:38 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/03 08:24:39 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAP_TRAP_HPP
 #define CLAP_TRAP_HPP
 
+#include <ostream>
 #include <string>
 #include <iostream>
+
+#define DEFAULT_HEALTH	10
+#define DEFAULT_ENERGY	10
+#define	DEFAULT_ATTACK	0
 
 class ClapTrap
 {
@@ -31,12 +36,12 @@ class ClapTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
-		friend	std::ostream & operator<<(std::ostream & out, ClapTrap const & clapTrap);
+		friend std::ostream & operator<<(std::ostream & out, ClapTrap const & clapTrap);
 
 	private:
 		
 		std::string		_name;
-		unsigned int	_points;
+		unsigned int	_health;
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;
 
