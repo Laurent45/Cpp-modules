@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:16:25 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/05 08:39:51 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/05 08:41:09 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	Animal *pets[10];
+	AAnimal *pets[10];
 
 	for (int i = 0; i < 5; i++)
 		pets[i] = new Dog();
@@ -62,6 +62,7 @@ int main()
 	delete cat1;
 	delete cat2;
 
+	/* AAnimal a = AAnimal(); */
 
 	return 0;
 
