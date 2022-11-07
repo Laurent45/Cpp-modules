@@ -6,7 +6,7 @@
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:32:56 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/14 08:54:16 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:53:40 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define WEAPON_HPP
 
 #include <string>
+#include <iostream>
 
 /* ************************************************************************** */
 /*									WEAPON									  */
@@ -26,11 +27,11 @@ class Weapon
 	public:
 
 		Weapon(void);
-		Weapon(std::string type);
+		Weapon(std::string const & type);
 		~Weapon(void);
 		
-		const std::string	&getType(void) const;
-		void				setType(std::string type);
+		std::string const &	getType(void) const;
+		void				setType(std::string const & type);
 
 
 	private:

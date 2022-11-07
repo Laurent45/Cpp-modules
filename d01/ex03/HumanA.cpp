@@ -6,14 +6,14 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 08:58:38 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/14 09:28:16 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:50:01 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
-#include <iostream>
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+HumanA::HumanA(std::string const & name, Weapon & weapon) 
+	: _name(name), _weapon(weapon)
 {
 	std::cout << "A new HumanA is created, his name is " << this->_name
 			  << " and his weapon type is " << this->_weapon.getType() << std::endl;
