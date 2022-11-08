@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 12:07:24 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/09/14 14:47:28 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:41:08 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,18 @@ int main(int argc, char *argv[])
 	std::ifstream ifs(filename.c_str());
 	if (ifs.is_open() == false)
 	{
-		std::cout << "file unknown" << std::endl;
+		std::cout << "File unknown" << std::endl;
 		return (1);
 	}
+
+	// Check if filename is a file or a directory
+	ifs.seekg(0, ifs.end);
+	if (!ifs.good())
+	{
+		std::cout << "This filename is a directory" << std::endl;
+		return (1);
+	}
+	ifs.seekg(0, ifs.beg);
 
 	// Try to create and open the replace file
 	filename += ".replace";
@@ -40,6 +49,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
+	
 	ft_replace(ifs, ofs, argv[2], argv[3]);
 
 	return (0);
