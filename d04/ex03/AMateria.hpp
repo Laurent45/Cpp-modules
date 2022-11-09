@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 09:39:51 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 20:02:19 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:50:55 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class AMateria
 		bool	isCollected(void) const;
 		void	setCollected(bool newStatus);
 		virtual AMateria * clone(void) const = 0;
-		virtual void use(ICharacter& target);
+		virtual void use(ICharacter & target);
 };
 #endif
 

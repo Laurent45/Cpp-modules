@@ -6,12 +6,11 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:53:29 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 20:16:51 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:53:33 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-#include "ICharacter.hpp"
 
 /* ************************************************************************** */
 //						           PUBLIC									  //
@@ -20,19 +19,22 @@
 // Canonical form
 Character::Character(void)
 {
+	for (int i = 0; i < MAX_ITEMS; i++)
+		this->_items[i] = NULL;
+
 	std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::~Character(void)
 {
 	int i = 0;
-	while (i < MAX_ITEMS && _items[i])
+	while (i < MAX_ITEMS && this->_items[i])
 		delete _items[i++];
 
 	std::cout << "Character destructor called" << std::endl;
 }
 
-Character::Character(Character const & copy)
+Character::Character(Character const & copy) : _name(copy._name)
 {
 	int i = 0;
 	while (i < MAX_ITEMS && copy._items[i])
@@ -46,19 +48,36 @@ Character::Character(Character const & copy)
 
 Character & Character::operator=(Character const & rhs)
 {
-	int i = 0;
-	while (i < MAX_ITEMS && this->_items[i])
-		delete this->_items[i];
-
-	i = 0;
-	while (i < MAX_ITEMS && rhs._items[i])
+	if (this != &rhs)
 	{
-		this->_items[i] = rhs._items[i]->clone();
-		i++;
+		this->_name = rhs._name;
+		int i = 0;
+		while (i < MAX_ITEMS && this->_items[i])
+		{
+			delete this->_items[i];
+			this->_items[i] = NULL;
+			i++;
+		}
+
+		i = 0;
+		while (i < MAX_ITEMS && rhs._items[i])
+		{
+			this->_items[i] = rhs._items[i]->clone();
+			i++;
+		}
 	}
 
 	std::cout << "Character copy assignment called" << std::endl;
 	return (*this);
+}
+
+// Constructor
+Character::Character(std::string const & name) : _name(name)
+{
+	for (int i = 0; i < MAX_ITEMS; i++)
+		this->_items[i] = NULL;
+
+	std::cout << "Character constructor (name: " << name << ") called" << std::endl;
 }
 
 // Members methods
@@ -69,6 +88,9 @@ std::string const &	Character::getName(void) const
 
 void	Character::equip(AMateria * m)
 {
+	if (!m)
+		return ;
+
 	int i = 0;
 	while (i < MAX_ITEMS && this->_items[i])
 		i++;
@@ -87,12 +109,29 @@ void	Character::unequip(int idx)
 		return ;
 	if (!this->_items[idx])
 		return ;
-	
-	int i = idx;
-	while ()
+	if (idx == MAX_ITEMS - 1 || this->_items[idx + 1] == NULL)
 	{
-		this->_items[]
+		this->_items[idx]->setCollected(false);
+		this->_items[idx] = NULL;
 	}
+	else
+	{
+		int i = idx;
+		this->_items[idx]->setCollected(false);
+		while (i < MAX_ITEMS - 1 && this->_items[i])
+		{
+			this->_items[i] = this->_items[i + 1];
+			i++;
+		}
+		this->_items[MAX_ITEMS - 1] = NULL;
+	}
+}
+
+void	Character::use(int idx, ICharacter & target)
+{
+	if (idx < 0 || idx >= MAX_ITEMS || !this->_items[idx])
+		return ;
+	this->_items[idx]->use(target);
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:52:28 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 13:37:58 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 08:32:12 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ AMateria *	Cure::clone(void) const
 	std::cout << "A clone of Cure created" << std::endl;
 
 	return (new Cure(*this));
+}
+
+void	Cure::use(ICharacter & target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 /* ************************************************************************** */
