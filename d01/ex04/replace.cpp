@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:37:48 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/08 16:44:43 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 07:28:06 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ void	ft_replace(std::ifstream &in, std::ofstream &out, char *arg1, char *arg2)
 	s2 = arg2;
 	while (getline(in, currentStr))
 	{
-		//if (!s1.empty())
-		//{
-			std::cout << "current str -> " << currentStr << std::endl;
+		if (!s1.empty())
+		{
 			initPos = 0;
 			findPos = 0;
 			while ((findPos = currentStr.find(s1, initPos)) != std::string::npos)
@@ -36,7 +35,7 @@ void	ft_replace(std::ifstream &in, std::ofstream &out, char *arg1, char *arg2)
 				initPos = findPos + s2.length();
 				currentStr.insert(findPos, s2);
 			}
-		//}
+		}
 		out << currentStr << std::endl;
 	}
 }
