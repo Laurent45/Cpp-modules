@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:51:07 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 13:00:29 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 08:30:03 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Cure : public AMateria
 		Cure &	operator=(Cure const & rhs);	
 
 		virtual AMateria *	clone(void) const;
+		virtual void use(ICharacter & target);
 
 };
 

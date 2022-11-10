@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 09:39:48 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 20:03:39 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 08:29:30 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ bool	AMateria::isCollected(void) const
 void	AMateria::setCollected(bool newStatus)
 {
 	this->_collected = newStatus;
+}
+
+void	AMateria::use(ICharacter & target)
+{
+	std::cout << "Default use (" << target.getName() << ")" << std::endl;
 }
 /* ************************************************************************** */
 //						           PRIVATE									  //

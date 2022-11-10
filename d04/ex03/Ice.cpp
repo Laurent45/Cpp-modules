@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:38:28 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 13:38:54 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 08:33:56 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ AMateria *	Ice::clone(void) const
 	return (new Ice(*this));
 }
 
+void	Ice::use(ICharacter & target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
 
 /* ************************************************************************** */
 //						           PRIVATE									  //

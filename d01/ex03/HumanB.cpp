@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 08:14:11 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/07 14:55:18 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/09 07:01:16 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void	HumanB::setWeapon(Weapon * weapon)
 
 void	HumanB::attack(void) const
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon->getType() 
-			  << std::endl;
+	if (this->_weapon)
+	{
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() 
+				  << std::endl;
+	}
 }
