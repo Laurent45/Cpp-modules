@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:22:46 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 08:48:24 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:27:03 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ class ClapTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
-		friend std::ostream & operator<<(std::ostream & out, ClapTrap const & clapTrap);
+		std::string		getName(void) const;
+		unsigned int	getHealth(void) const;
+		unsigned int	getEnergyPoints(void) const;
+		unsigned int	getAttackDamage(void) const;
+
 
 	protected:
 		
@@ -48,6 +52,8 @@ class ClapTrap
 		bool	canAct(void) const;
 
 };
+
+std::ostream & operator<<(std::ostream & out, ClapTrap const & clapTrap);
 
 #endif
 

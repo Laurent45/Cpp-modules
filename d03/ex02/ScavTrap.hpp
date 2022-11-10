@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:41:14 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 08:51:42 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:22:17 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class ScavTrap : public ClapTrap
 		void	attack(std::string const & target);
 		void	guardGate(void) const;
 
-		friend std::ostream & operator<<(std::ostream & out, ScavTrap const & ScavTrap);
-
 };
+
+std::ostream & operator<<(std::ostream & out, ScavTrap const & scavTrap);
 
 #endif
