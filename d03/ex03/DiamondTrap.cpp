@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:13:32 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 14:38:11 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:43:19 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,20 @@ void	DiamondTrap::whoAmI(void) const
 			  << std::endl;
 }
 
+std::string		DiamondTrap::getName(void) const
+{
+	return this->_name;
+}
 
 /* ************************************************************************** */
 //						           FUNCTIONS								  //
 /* ************************************************************************** */
 std::ostream & operator<<(std::ostream & out, DiamondTrap const & diamondTrap)
 {
-	out << "DiamondTrap(name: " << diamondTrap._name << ", "
-		<< "health: " << diamondTrap.ClapTrap::_health << ", "
-		<< "energy points: " << diamondTrap.ClapTrap::_energyPoints << ", "
-		<< "attack damage: " << diamondTrap.ClapTrap::_attackDamage << ")"
+	out << "DiamondTrap(name: " << diamondTrap.getName() << ", "
+		<< "health: " << diamondTrap.getHealth() << ", "
+		<< "energy points: " << diamondTrap.getEnergyPoints() << ", "
+		<< "attack damage: " << diamondTrap.getAttackDamage() << ")"
 		<< std::endl;
 
 	return out;

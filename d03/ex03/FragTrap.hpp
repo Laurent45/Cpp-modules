@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:38:52 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 13:09:11 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:32:12 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class FragTrap : virtual public ClapTrap
 
 		void	highFivesGuys(void) const;
 
-		friend std::ostream & operator<<(std::ostream & out, FragTrap const & fragTrap);
-
 };
+
+std::ostream & operator<<(std::ostream & out, FragTrap const & fragTrap);
 
 #endif

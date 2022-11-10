@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:44:50 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 14:01:22 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:28:04 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ void	FragTrap::highFivesGuys(void) const
 
 std::ostream & operator<<(std::ostream & out, FragTrap const & fragTrap)
 {
-	out << "FragTrap(name: " << fragTrap._name << ", "
-		<< "health: " << fragTrap._health << ", "
-	    << "energy points: " << fragTrap._energyPoints << ", "
-		<< "attack damage: " << fragTrap._attackDamage << ")"
+	out << "FragTrap(name: " << fragTrap.getName() << ", "
+		<< "health: " << fragTrap.getHealth() << ", "
+	    << "energy points: " << fragTrap.getEnergyPoints() << ", "
+		<< "attack damage: " << fragTrap.getAttackDamage() << ")"
 		<< std::endl;
 	return out;
 }

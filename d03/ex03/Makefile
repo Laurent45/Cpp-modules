@@ -6,7 +6,7 @@
 #    By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 08:04:56 by lfrederi          #+#    #+#              #
-#    Updated: 2022/11/03 14:27:41 by lfrederi         ###   ########.fr        #
+#    Updated: 2022/11/10 14:44:17 by lfrederi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME			= diamoundTrap
 
 CC				= c++
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -Wshadow -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp ${HEADERS} 
 		${CC} ${CFLAGS}	-c $< -o ${<:.cpp=.o}
