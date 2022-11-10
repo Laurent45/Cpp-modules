@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:22:42 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 08:30:42 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:07:32 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,25 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			  << std::endl;
 }
 
+std::string		ClapTrap::getName(void) const
+{
+	return (this->_name);
+}
+
+unsigned int	ClapTrap::getHealth(void) const
+{
+	return (this->_health);
+}
+
+unsigned int	ClapTrap::getEnergyPoints(void) const
+{
+	return (this->_energyPoints);
+}
+
+unsigned int	ClapTrap::getAttackDamage(void) const
+{
+	return (this->_attackDamage);
+}
 
 /* ************************************************************************** */
 //						           PRIVATE									  //
@@ -127,10 +146,10 @@ bool	ClapTrap::canAct(void) const
 
 std::ostream & operator<<(std::ostream & out, ClapTrap const & clapTrap)
 {
-	out << "ClapTrap(name: " << clapTrap._name << ", "
-		<< "health: " << clapTrap._health << ", "
-	    << "energy points: " << clapTrap._energyPoints << ", "
-		<< "attack damage: " << clapTrap._attackDamage << ")"
+	out << "ClapTrap(name: " << clapTrap.getName() << ", "
+		<< "health: " << clapTrap.getHealth() << ", "
+	    << "energy points: " << clapTrap.getEnergyPoints() << ", "
+		<< "attack damage: " << clapTrap.getAttackDamage() << ")"
 		<< std::endl;
 	return out;
 }
