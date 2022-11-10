@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:41:14 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/10 14:15:17 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:22:17 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ class ScavTrap : public ClapTrap
 		void	guardGate(void) const;
 
 };
+
+std::ostream & operator<<(std::ostream & out, ScavTrap const & scavTrap);
 
 #endif
