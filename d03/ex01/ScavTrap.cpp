@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:41:19 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/03 08:58:05 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:15:14 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,19 +82,4 @@ void	ScavTrap::attack(std::string const & target)
 void	ScavTrap::guardGate(void) const
 {
 	std::cout << "ScavTrap " << this->_name << " is now in keeper mode" << std::endl;
-}
-
-
-/* ************************************************************************** */
-//						           FUNCTIONS								  //
-/* ************************************************************************** */
-
-std::ostream & operator<<(std::ostream & out, ScavTrap const & scavTrap)
-{
-	out << "ScavTrap(name: " << scavTrap._name << ", "
-		<< "health: " << scavTrap._health << ", "
-	    << "energy points: " << scavTrap._energyPoints << ", "
-		<< "attack damage: " << scavTrap._attackDamage << ")"
-		<< std::endl;
-	return out;
 }
