@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:41:19 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/10 14:23:44 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/11 09:02:03 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ void	ScavTrap::attack(std::string const & target)
 
 void	ScavTrap::guardGate(void) const
 {
-	std::cout << "ScavTrap " << this->_name << " is now in keeper mode" << std::endl;
+	if (this->_health == 0)
+		std::cout << "ScavTrap is dead, keeper mode unavailable" << std::endl;
+	else
+		std::cout << "ScavTrap " << this->_name << " is now in keeper mode" << std::endl;
 }
 
 /* ************************************************************************** */
