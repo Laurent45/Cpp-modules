@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:13:28 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/10 14:42:03 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/11 09:18:15 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		
 		DiamondTrap(std::string const & name);
 
-		void	attack(const std::string & target);
+		virtual void	attack(const std::string & target);
 		void	whoAmI(void) const;	
 
 		virtual std::string		getName(void) const;

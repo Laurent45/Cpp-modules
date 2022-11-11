@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:41:14 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/10 14:33:04 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/11 09:15:42 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ScavTrap : virtual public ClapTrap
 
 		ScavTrap(std::string const & name);
 
-		void	attack(std::string const & target);
+		virtual void	attack(std::string const & target);
 		void	guardGate(void) const;
 
 };
