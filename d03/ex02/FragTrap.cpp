@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:44:50 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/10 14:28:04 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/11 09:10:20 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ FragTrap::FragTrap(std::string const & name) : ClapTrap(name)
 // Members methods
 void	FragTrap::highFivesGuys(void) const
 {
-	std::cout << "High fives request" << std::endl;
+	if (this->_health == 0)
+		std::cout << "FragTrap is dead, high five request unavailable" << std::endl;
+	else
+		std::cout << "High fives request" << std::endl;
 }
 
 /* ************************************************************************** */
