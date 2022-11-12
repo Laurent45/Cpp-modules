@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 12:07:24 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/09 07:29:35 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/12 08:56:36 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ int main(int argc, char *argv[])
 		std::cout << "File unknown" << std::endl;
 		return (1);
 	}
+	if (ifs.get() == EOF)
+	{
+		std::cout << "File is empty" << std::endl;
+		return (1);
+	}
+	ifs.seekg(0, ifs.beg);
 
 	// Try to create and open the replace file
 	filename += ".replace";
