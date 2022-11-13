@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:27:06 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/06 18:21:48 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/13 19:22:51 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ class AMateria;
 
 class ICharacter
 {
-	protected:
-		std::string _name;
-
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;
