@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:59:04 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 13:24:52 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:06:11 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream &	operator<<(std::ostream & out, Bureaucrat & bureaucrat);
+std::ostream &	operator<<(std::ostream & out, Bureaucrat const & bureaucrat);
 
 #endif
