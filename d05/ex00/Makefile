@@ -6,13 +6,13 @@
 #    By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 08:04:56 by lfrederi          #+#    #+#              #
-#    Updated: 2022/11/14 10:58:23 by lfrederi         ###   ########.fr        #
+#    Updated: 2022/11/14 14:12:51 by lfrederi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			= main.cpp Bureaucrat.cpp
 
-HEADERS			= Bureaucrat.cpp 
+HEADERS			= Bureaucrat.hpp 
 
 OBJS			= ${SRCS:.cpp=.o}
 
