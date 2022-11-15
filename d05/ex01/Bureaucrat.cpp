@@ -6,11 +6,13 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 12:38:12 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 17:05:22 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:00:50 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include <iostream>
 
 /* ************************************************************************** */
 //						           PUBLIC									  //
@@ -86,15 +88,19 @@ Bureaucrat &	Bureaucrat::operator--(void)
 void	Bureaucrat::signForm(Form & form) const
 {
 	if (form.isSigned())
-		std::cout << *this << " signed " << form << std::endl;
+		std::cout << "Form is already signed"<< std::endl;
 	else
 	{
-		if (this->_grade > form.getGradeToSigned())
+		if (isAllowed(form.getGradeToSigned()))
+		{
+			std::cout << *this << " signed " << form << std::endl; 
+			form.setSigned(true);
+		}
+		else
 			std::cout << *this << " couldn't sign " << form
-					  << " because grade's bureaucrat is too high" << std::endl;
+					  << " because grade's bureaucrat is too low" << std::endl;
 	}
 }
-
 // Exception classes
 const char *	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
@@ -106,6 +112,15 @@ const char *	Bureaucrat::GradeTooLowException::what(void) const throw()
 	return "Exception: Bureaucrat's grade is too low";
 }
 
+/* ************************************************************************** */
+//						           PRIVATE									  //
+/* ************************************************************************** */
+bool	Bureaucrat::isAllowed(int gradeRequirement) const
+{
+	if (this->_grade > gradeRequirement)
+		return (false);
+	return (true);
+}
 /* ************************************************************************** */
 //						           FUNCTIONS								  //
 /* ************************************************************************** */

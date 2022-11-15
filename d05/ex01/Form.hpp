@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:13:23 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 17:01:16 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:06:15 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FORM_HPP
 
 #include <string>
-#include <iostream>
+#include <exception>
 
 class Bureaucrat;
 
@@ -41,6 +41,7 @@ class Form
 		bool				isSigned(void) const;
 		int					getGradeToSigned(void) const;
 		int					getGradeToExec(void) const;
+		void				setSigned(bool newStatus);
 
 		// Members function
 		void	beSigned(Bureaucrat & bureaucrat);

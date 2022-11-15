@@ -6,12 +6,13 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:46:06 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 17:05:45 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:07:12 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 /* ************************************************************************** */
 //						           PUBLIC									  //
@@ -78,6 +79,11 @@ int		Form::getGradeToSigned(void) const
 int		Form::getGradeToExec(void) const
 {
 	return (this->_gradeToExec);
+}
+
+void	Form::setSigned(bool newStatus)
+{
+	this->_signed = newStatus;
 }
 
 // Members methods

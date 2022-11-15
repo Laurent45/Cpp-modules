@@ -6,13 +6,13 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:13:08 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 16:59:10 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:06:52 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include <exception>
+#include <iostream>
 
 int main(void)
 {

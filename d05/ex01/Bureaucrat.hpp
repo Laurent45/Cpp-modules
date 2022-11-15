@@ -6,18 +6,15 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:59:04 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 17:01:06 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:01:15 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Form.hpp"
-
 #include <exception>
 #include <string>
-#include <iostream>
 
 class Form;
 
@@ -26,6 +23,8 @@ class Bureaucrat
 	private:
 		std::string const	_name;
 		int					_grade;
+
+		bool	isAllowed(int gradeRequirement) const;
 
 	public:
 
