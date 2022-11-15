@@ -6,11 +6,12 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:13:08 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 16:45:44 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:57:03 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 int main(void)
 {
@@ -21,7 +22,7 @@ int main(void)
 		} 
 		catch (std::exception & e) 
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 	}
 
@@ -34,7 +35,7 @@ int main(void)
 		} 
 		catch (std::exception & e) 
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 	}
 
@@ -56,7 +57,7 @@ int main(void)
 		} 
 		catch (std::exception & e) 
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 	}
 	
@@ -78,7 +79,7 @@ int main(void)
 		} 
 		catch (std::exception & e) 
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 	}
 

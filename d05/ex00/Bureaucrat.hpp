@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:59:04 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/14 17:06:11 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:52:42 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <exception>
 #include <string>
-#include <iostream>
 
 class Bureaucrat
 {
