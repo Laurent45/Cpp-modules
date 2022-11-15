@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 07:11:12 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 13:22:26 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:16:45 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,18 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	for (int i = 0; i < 5; i++)
 		out << tree << std::endl;
 	std::cout << GRN "Form executed !" NC << std::endl;
+}
+
+/* ************************************************************************** */
+//						           FUNCTION									  //
+/* ************************************************************************** */
+std::ostream & operator<<(std::ostream & out, ShrubberyCreationForm const & form)
+{
+	out << "ShrubberyCreationForm -> ("
+		<< "name: " << form.getName()
+		<< ", target: " << form.getTarget()
+		<< ", signed: " << (form.isSigned() ? "true": "false")
+		<< ", grade to signed: " << form.getGradeToSigned()
+		<< ", grade to exec: " << form.getGradeToExec() << ")";
+	return (out);
 }

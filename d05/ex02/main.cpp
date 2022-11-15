@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:13:08 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 13:46:29 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:22:07 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(void)
 
 	AForm * form = new ShrubberyCreationForm("garden");
 	std::cout << std::endl;
-	std::cout << *form << std::endl;
+	std::cout << *dynamic_cast<ShrubberyCreationForm*>(form) << std::endl;
 	for (int i = 0; i < NB_BUREAUCRAT; i++)
 	{
 		try
@@ -90,7 +90,7 @@ int main(void)
 
 	form = new RobotomyRequestForm("tesla");
 	std::cout << std::endl;
-	std::cout << *form << std::endl;
+	std::cout << *dynamic_cast<RobotomyRequestForm*>(form) << std::endl;
 	for (int i = NB_BUREAUCRAT - 1; i >= 0; i--)
 	{
 		try
@@ -133,7 +133,7 @@ int main(void)
 
 	form = new PresidentialPardonForm("pepe");
 	std::cout << std::endl;
-	std::cout << *form << std::endl;
+	std::cout << *dynamic_cast<PresidentialPardonForm*>(form) << std::endl;
 	for (int i = NB_BUREAUCRAT - 1; i >= 0; i--)
 	{
 		try

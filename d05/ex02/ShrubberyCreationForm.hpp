@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:18:09 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 09:22:37 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:16:59 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ class ShrubberyCreationForm : public AForm
 		// Member functions
 		virtual void	execute(Bureaucrat const & executor) const;
 };
+
+std::ostream & operator<<(std::ostream & out, ShrubberyCreationForm const & form);
 
 #endif

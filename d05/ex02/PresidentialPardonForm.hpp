@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:37:47 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 10:43:05 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:13:04 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ class PresidentialPardonForm : public AForm
 		virtual void	execute(Bureaucrat const & executor) const;
 };
 
+std::ostream & operator<<(std::ostream & out, PresidentialPardonForm const & form);
 #endif

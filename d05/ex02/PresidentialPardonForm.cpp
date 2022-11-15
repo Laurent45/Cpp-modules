@@ -6,12 +6,11 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:40:11 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 13:35:55 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:14:58 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include <exception>
 #include <iostream>
 
 /* ************************************************************************** */
@@ -67,4 +66,18 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox"
 			  << std::endl;
 	std::cout << GRN "Form executed !" NC << std::endl;
+}
+
+/* ************************************************************************** */
+//						           FUNCTION									  //
+/* ************************************************************************** */
+std::ostream & operator<<(std::ostream & out, PresidentialPardonForm const & form)
+{
+	out << "PresidentialPardonForm -> ("
+		<< "name: " << form.getName()
+		<< ", target: " << form.getTarget()
+		<< ", signed: " << (form.isSigned() ? "true": "false")
+		<< ", grade to signed: " << form.getGradeToSigned()
+		<< ", grade to exec: " << form.getGradeToExec() << ")";
+	return (out);
 }

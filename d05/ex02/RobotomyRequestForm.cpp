@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:05:57 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 09:37:35 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:15:49 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,18 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	else
 		std::cout << this->getTarget() << " isn't set to a robot operation failed" << std::endl;
 	std::cout << GRN "Form executed !" NC << std::endl;
+}
+
+/* ************************************************************************** */
+//						           FUNCTION									  //
+/* ************************************************************************** */
+std::ostream & operator<<(std::ostream & out, RobotomyRequestForm const & form)
+{
+	out << "RobotomyRequestForm -> ("
+		<< "name: " << form.getName()
+		<< ", target: " << form.getTarget()
+		<< ", signed: " << (form.isSigned() ? "true": "false")
+		<< ", grade to signed: " << form.getGradeToSigned()
+		<< ", grade to exec: " << form.getGradeToExec() << ")";
+	return (out);
 }

@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:02:06 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 09:24:39 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:16:07 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ class RobotomyRequestForm : public AForm
 		// Member functions
 		virtual void	execute(Bureaucrat const & executor) const;
 };
+
+std::ostream & operator<<(std::ostream & out, RobotomyRequestForm const & form);
 
 #endif
