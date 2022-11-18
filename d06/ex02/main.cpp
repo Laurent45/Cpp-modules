@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 12:19:48 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:21:15 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:28:45 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int main(void)
 
 	identify(p);
 	identify(ref);
+
+	delete p;
 
 	return (0);
 }
