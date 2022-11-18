@@ -6,7 +6,7 @@
 #    By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 08:04:56 by lfrederi          #+#    #+#              #
-#    Updated: 2022/11/17 17:01:07 by lfrederi         ###   ########.fr        #
+#    Updated: 2022/11/18 11:36:05 by lfrederi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME			= convert
 
 CC				= c++
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -g -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp ${HEADERS} 
 		${CC} ${CFLAGS}	-c $< -o ${<:.cpp=.o}

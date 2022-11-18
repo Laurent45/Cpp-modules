@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:04:02 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/17 18:51:56 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:39:05 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ e_type	detectLiteralType(char const * literal)
 								, "-inf", "+inf", "inf", "nan"};
 
 	if (literal[1] == '\0')
+	{
+		if (literal[0] >= '0' && literal[0] <= '9')
+			return (INT);
 		return (CHAR);
+	}
+
 	for (i = 0; i < 8; i++)
 	{
 		if (compare(literal, pseudosLit[i]))
