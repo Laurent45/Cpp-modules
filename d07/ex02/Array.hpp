@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 07:56:48 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/19 09:08:52 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/19 09:40:15 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ class Array
 				_array = new T[_size];
 				for (unsigned int i = 0; i < _size; i++)
 					_array[i] = rhs[i];
-				
 			}
 			return (*this);
 		}
