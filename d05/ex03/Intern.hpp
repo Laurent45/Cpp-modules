@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:28:16 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 15:46:34 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/20 16:52:38 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Intern
 		// Member function
 		AForm * makeForm(std::string const & nameForm, std::string const & target) const;
 
+	private:
 		AForm *	createShrubberyCreationForm(std::string const & target) const;
 		AForm *	createRobotomyRequestForm(std::string const & target) const;
 		AForm * createPresidentialPardonForm(std::string const & target) const;
