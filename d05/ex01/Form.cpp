@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:46:06 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 14:07:12 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/20 16:43:10 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,17 @@ void	Form::setSigned(bool newStatus)
 }
 
 // Members methods
-void	Form::beSigned(Bureaucrat & bureaucrat)
+void	Form::beSigned(Bureaucrat const & bureaucrat)
 {
+	if (this->_signed)
+	{
+		std::cout << "Form already signed !" << std::endl;
+		return ;
+	}
 	if (bureaucrat.getGrade() > this->_gradeToSigned)
 		throw Form::GradeTooLowException();
 	this->_signed = true;
+	std::cout << "Form signed !" << std::endl;
 }
 
 // Exception classes

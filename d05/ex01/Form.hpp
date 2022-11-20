@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:13:23 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/15 14:06:15 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/20 16:40:12 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Form
 		void				setSigned(bool newStatus);
 
 		// Members function
-		void	beSigned(Bureaucrat & bureaucrat);
+		void	beSigned(Bureaucrat const & bureaucrat);
 
 		// Exception
 		class GradeTooHighException : public std::exception
