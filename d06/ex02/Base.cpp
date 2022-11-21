@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:45:38 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:23:40 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:56:20 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,16 @@ void	identify(Base & p)
 {
 	try
 	{
-		dynamic_cast<A &>(p);
+		A & a = dynamic_cast<A &>(p);
+		(void) a;
 		std::cout << "Object type is A" << std::endl;
 	}
 	catch (std::exception & e)
 	{
 		try
 		{
-			dynamic_cast<B &>(p);
+			B & b = dynamic_cast<B &>(p);
+			(void) b;
 			std::cout << "Object type is B" << std::endl;
 		}
 		catch (std::exception & e)
