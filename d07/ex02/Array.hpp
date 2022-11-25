@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 07:56:48 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/19 09:40:15 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:58:45 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ class Array
 		}
 
 		Array(Array<T> const & copy)
-			: _size(copy.size), _array(new T[copy.size]) {
+			: _size(copy._size), _array(new T[copy._size]) {
 			for (unsigned int i = 0; i < _size; i++)
 				_array[i] = copy._array[i];
 		}
 
-		Array &	operator=(Array<T> & rhs) {
+		Array &	operator=(Array<T> const & rhs) {
 			if (this != &rhs) {
 				_size = rhs._size;
 				if (_array)
@@ -57,6 +57,12 @@ class Array
 		
 		// Members functions
 		T &	operator[](unsigned int n) {
+			if (n >= _size)
+				throw std::exception();
+			return (this->_array[n]);
+		}
+
+		T const &	operator[](unsigned int n) const {
 			if (n >= _size)
 				throw std::exception();
 			return (this->_array[n]);
