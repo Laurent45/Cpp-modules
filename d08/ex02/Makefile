@@ -6,7 +6,7 @@
 #    By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 08:04:56 by lfrederi          #+#    #+#              #
-#    Updated: 2022/11/24 15:27:30 by lfrederi         ###   ########.fr        #
+#    Updated: 2022/11/25 13:28:37 by lfrederi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ HEADERS			= MutantStack.hpp
 
 OBJS			= ${SRCS:.cpp=.o}
 
-NAME			= span 
+NAME			= mutantStack 
 
 CC				= c++
 RM				= rm -f
