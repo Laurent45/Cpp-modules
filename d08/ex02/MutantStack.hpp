@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:27:51 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/24 18:07:24 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/27 11:15:07 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 #define MUTANT_STACK_HPP
 
 #include <deque>
+#include <cstddef>
 
 template< typename T, typename Container = std::deque<T> >
 class MutantStack 
 {
 	public:
-		typedef		T				value_type;
-		typedef		Container		container_type;	
-		typedef		unsigned int	size_type;
+		typedef		T									value_type;
+		typedef		Container							container_type;	
+		typedef		size_t								size_type;
+		typedef		typename Container::iterator		iterator;
+		typedef		typename Container::const_iterator	const_iterator;
 
 		explicit MutantStack(container_type const & container = container_type());
 
@@ -33,10 +36,14 @@ class MutantStack
 		void				pop();
 
 
+		iterator			begin() { return _stack.begin(); }
+		const_iterator		begin() const { return _stack.begin(); }
+		iterator			end() { return _stack.end(); }
+		const_iterator		end() const { return _stack.end(); }
+
+
 	private:
 		container_type	_stack;
-
-
 };
 
 template<typename T, typename Container>
@@ -50,18 +57,18 @@ bool	MutantStack<T, Container>::empty() const
 }
 
 template<typename T, typename Container>
-typename MutantStack<T, Container>::size_type	MutantStack<T, Container>::size() const
+size_t	MutantStack<T, Container>::size() const
 {
 	return (this->_stack.size());
 }
 template<typename T, typename Container>
-typename MutantStack<T, Container>::value_type &	MutantStack<T, Container>::top()
+T &	MutantStack<T, Container>::top()
 {
 	return (this->_stack.back());
 }
 
 template<typename T, typename Container>
-typename MutantStack<T, Container>::value_type const &	MutantStack<T, Container>::top() const
+const T &	MutantStack<T, Container>::top() const
 {
 	return (this->_stack.back());
 }
