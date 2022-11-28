@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:56:45 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/28 12:36:03 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:00:12 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,9 @@ int main()
 		MutantStack<int> tmp;
 		tmp.push(5);
 		tmp.push(17);
-		it = tmp.begin();
-		ite = tmp.end();
+		stk = tmp;
+		it = stk.begin();
+		ite = stk.end();
 		while (it != ite)
 		{
 			std::cout << *it << std::endl;

@@ -6,7 +6,7 @@
 /*   By: lfrederi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:10:54 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/28 12:27:20 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:59:32 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class MutantStack : public std::stack<T, Container>
 			{
 				this->c = rhs.c;
 			}
+			return (*this);
 		}
 
 		iterator			begin() { return this->c.begin(); }
