@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:56:45 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/27 12:02:35 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:36:03 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,6 @@
 
 int main()
 {
-	{
-		std::deque<int> mydeque (3,100);          // deque with 3 elements
-		std::vector<int> myvector (2,200);        // vector with 2 elements
-
-		MutantStack<int> first;                    // empty stack
-		MutantStack<int> second (mydeque);         // stack initialized to copy of deque
-
-		MutantStack<int,std::vector<int> > third;  // empty stack using vector
-		MutantStack<int,std::vector<int> > fourth (myvector);
-
-		std::cout << "size of first: " << first.size() << '\n';
-		std::cout << "size of second: " << second.size() << '\n';
-		std::cout << "size of third: " << third.size() << '\n';
-		std::cout << "size of fourth: " << fourth.size() << '\n';
-	}
-
 	{
 		MutantStack<int> mystack;
 
@@ -48,6 +32,8 @@ int main()
 		std::cout << '\n';
 	}
 
+	std::cout << '\n';
+
 	{
 		MutantStack<int> mstack;
 		mstack.push(5);
@@ -58,7 +44,6 @@ int main()
 		mstack.push(3);
 		mstack.push(5);
 		mstack.push(737);
-		//[...]
 		mstack.push(0);
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
@@ -70,6 +55,8 @@ int main()
 			++it;
 		}
 	}
+
+	std::cout << '\n';
 
 	{
 		MutantStack<int, std::list<int> > mystack;
@@ -84,6 +71,8 @@ int main()
 		}
 		std::cout << '\n';
 	}
+	
+	std::cout << '\n';
 
 	{
 		MutantStack<int> mstack;
@@ -107,7 +96,37 @@ int main()
 			++it;
 		}
 		std::cout << '\n';
-		/* std::stack<int> s(mstack); */
+
+		MutantStack<int> stk(mstack);
+		it = stk.begin();
+		ite = stk.end();
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+		std::cout << '\n';
+
+		std::stack<int> s(mstack);
+		while (!s.empty())
+		{
+			std::cout << s.top() << std::endl;
+			s.pop();
+		}
+		std::cout << '\n';
+
+		MutantStack<int> tmp;
+		tmp.push(5);
+		tmp.push(17);
+		it = tmp.begin();
+		ite = tmp.end();
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+		std::cout << '\n';
+
 	}
 
 	{
@@ -117,5 +136,7 @@ int main()
 		std::stack<int> stack;
 		stack.pop();
 	}
+
+		
 	return 0;
 }
