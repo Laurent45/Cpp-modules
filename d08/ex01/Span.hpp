@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:15:23 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/23 19:09:09 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:01:27 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,5 @@ class Span
 		}
 
 };
-
-unsigned int	sum(int a, int b);
 
 #endif

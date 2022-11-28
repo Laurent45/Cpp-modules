@@ -6,7 +6,7 @@
 #    By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 08:04:56 by lfrederi          #+#    #+#              #
-#    Updated: 2022/11/23 18:32:37 by lfrederi         ###   ########.fr        #
+#    Updated: 2022/11/28 12:01:41 by lfrederi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME			= span
 
 CC				= c++
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp ${HEADERS} 
 		${CC} ${CFLAGS}	-c $< -o ${<:.cpp=.o}

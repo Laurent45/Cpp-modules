@@ -6,11 +6,10 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 10:08:53 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/24 15:16:21 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:00:17 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Span.hpp"
 
 int main(void)

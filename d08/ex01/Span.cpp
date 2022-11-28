@@ -6,14 +6,14 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:58:59 by lfrederi          #+#    #+#             */
-/*   Updated: 2022/11/24 15:14:44 by lfrederi         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:59:43 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 #include <algorithm>
-#include <limits.h>
+#include <climits>
 
 /* ************************************************************************** */
 //						           PUBLIC									  //
@@ -30,7 +30,6 @@ Span & Span::operator=(Span const & rhs)
 {
 	if (this != &rhs) {
 		_size = rhs._size;
-		_store.clear();
 		_store = rhs._store;
 	}
 
