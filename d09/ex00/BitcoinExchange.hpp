@@ -16,7 +16,7 @@
 #include <map>
 #include <string>
 
-#define DATABASE_PATH   "/home/esquanor/Downloads/cpp_09/data.csv"
+#define DATABASE_PATH   "/Users/laurentfrederick/Downloads/cpp_09/data.csv"
 
 enum    MONTH
 {
@@ -41,12 +41,12 @@ class BitcoinExchange
 
         std::map<std::string, double>   _ref;
 
-        void    checkLineDb(std::string line);
+        void    insertLineIntoMap(std::string const & line);
         bool    isValidDate(std::string const & date) const;
         double  stringToFloat(std::string const & value) const;
         bool    isAllDigit(std::string const & str) const;
-        bool    isValidInputLine(std::string const & line) const;
-
+        void    calculate(std::string date, double value) const;
+        
     public:
 
         BitcoinExchange(void);
@@ -54,14 +54,10 @@ class BitcoinExchange
         BitcoinExchange & operator=(BitcoinExchange const & rhs);
         ~BitcoinExchange(void);
 
+        void    loadDataBase();
         void    calculateRateExchange(char const filePath[]) const;
 
-        class DataBaseFileException : public std::exception
-        {
-            public:
-                virtual const char* what() const throw();
-        };
-
+        void    print();
 };
 
 #endif

@@ -17,21 +17,20 @@
 
 int main(int argc, char const *argv[])
 {
-    (void) argv;
     if (argc != 2)
     {
-        std::cout << "Usage: ./btc <input file>" << std::endl;
+        std::cerr << "Usage: ./btc <input file>" << std::endl;
         return 1;
     }
 
     try
     {
         BitcoinExchange btc;
+        btc.loadDataBase();
         btc.calculateRateExchange(argv[1]);
     }
     catch(std::exception & e)
     {
-        std::cout << e.what();
         return 1;
     }
 
