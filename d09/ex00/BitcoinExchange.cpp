@@ -76,6 +76,13 @@ void    BitcoinExchange::loadDataBase()
         }
     }
     ifs.close();
+    
+    if (_ref.empty())
+    {
+        std::cerr << "Database is empty, impossible to process bitcoin exchange"
+                  << std::endl;
+        throw std::exception();
+    }
 }
 
 void BitcoinExchange::print()

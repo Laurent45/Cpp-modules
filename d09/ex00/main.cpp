@@ -13,8 +13,6 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-// TODO(): if _ref is empty
-
 int main(int argc, char const *argv[])
 {
     if (argc != 2)
