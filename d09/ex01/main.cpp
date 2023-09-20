@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 22:15:22 by lfrederi          #+#    #+#             */
-/*   Updated: 2023/09/20 11:36:24 by lfrederi         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:55:59 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
     try {
       int res = rpn.calculate(argv[1]);
       std::cout << res << std::endl;
-    } catch (std::runtime_error const e) {
+    } catch (std::exception & e) {
       std::cout << e.what() << std::endl;
     }
 
