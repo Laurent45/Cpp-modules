@@ -6,11 +6,12 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 22:15:22 by lfrederi          #+#    #+#             */
-/*   Updated: 2023/07/08 17:08:53 by lfrederi         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:36:24 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdexcept>
 #include "RPN.hpp"
 
 int main(int argc, char const *argv[])
@@ -22,7 +23,13 @@ int main(int argc, char const *argv[])
     }
 
     RPN rpn;
-    rpn.calculate(argv[1]);
+
+    try {
+      int res = rpn.calculate(argv[1]);
+      std::cout << res << std::endl;
+    } catch (std::runtime_error const e) {
+      std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }

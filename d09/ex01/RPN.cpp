@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:42:40 by lfrederi          #+#    #+#             */
-/*   Updated: 2023/07/08 17:33:31 by lfrederi         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:38:55 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <stack>
 #include <cctype>
+#include <stdexcept>
 #include <string>
 
 /****************
@@ -27,13 +28,13 @@ RPN::RPN(void)
 
 RPN::RPN(RPN const & copy)
 {
-    (void) copy;
+  (void) copy;
 }
 
 RPN &RPN::operator=(RPN const &rhs)
 {
-    (void) rhs;
-    return (*this);
+  (void) rhs;
+  return (*this);
 }
 
 RPN::~RPN(void)
@@ -45,40 +46,25 @@ RPN::~RPN(void)
  * PUBLIC METHODS
  ****************/
 
-void    RPN::calculate(const char * str) const
+int RPN::calculate(const char * str) const
 {
-    std::stack<float>   stack;
-    bool                error = false;
-    size_t              i = 0;
+  std::stack<int, std::list<int> >  stack;
+  size_t                            i = 0;
 
-    while (str[i])
-    {
-        if (std::isdigit(str[i]))
-            stack.push(str[i] - '0');
-        else if (isOperator(str[i]))
-        {
-            if (!doOperation(str[i], stack))
-            {
-                error = true;
-                break ;
-            }
-        }
-        else if (!std::isspace(str[i]))
-        {
-            std::cout << "Error: Invalid character: " << str[i] << std::endl;
-            error = true;
-            break;
-        }
-        i++;
-    }
+  while (str[i])
+  {
+    if (std::isdigit(str[i]))
+      stack.push(str[i] - '0');
+    else if (isOperator(str[i]))
+      doOperation(str[i], stack);
+    else if (!std::isspace(str[i]))
+      throw std::runtime_error("Error: Invalid character: ");
+    i++;
+  }
 
-    if (!error)
-    {
-        if (stack.size() == 1)
-            std::cout << stack.top() << std::endl;
-        else
-            std::cout << "Error: RPN expression is not valid" << std::endl;
-    }
+  if (stack.size() == 1)
+    return stack.top();
+  throw std::runtime_error("Error: RPN expression is not valid");
 }
 
 /******************************************************************************/
@@ -89,48 +75,46 @@ void    RPN::calculate(const char * str) const
 
 bool    RPN::isOperator(char c) const
 {
-    const std::string operators("+-*/");
-    std::string::const_iterator it = operators.begin();
+  const std::string operators("+-*/");
+  std::string::const_iterator it = operators.begin();
 
-    for (; it != operators.end(); it++)
-    {
-        if (c == *it)
-            return true;
-    }
-    return false;
+  for (; it != operators.end(); it++)
+  {
+    if (c == *it)
+      return true;
+  }
+  return false;
 }
 
-bool    RPN::doOperation(char c, std::stack<float> & stack) const
+void  RPN::doOperation(char c, std::stack<int, std::list<int> > & stack) const
 {
-    float   tmp;
+  int   tmp;
 
-    if (stack.size() < 2)
-    {
-        std::cout << "Error: RPN expression is invaild" << std::endl;
-        return false;
-    }
+  if (stack.size() < 2)
+    throw std::runtime_error("Error: RPN expression is invaild");
 
-    tmp = stack.top();
-    stack.pop();
+  tmp = stack.top();
+  stack.pop();
 
-    if (c == '+')
-        tmp = stack.top() + tmp;
-    else if (c == '-')
-        tmp = stack.top() - tmp;
-    else if (c == '*')
-        tmp = stack.top() * tmp;
-    else if (c == '/')
-        tmp = stack.top() / tmp;
-    else
-        throw std::exception();
+  if (c == '+')
+    tmp = stack.top() + tmp;
+  else if (c == '-')
+    tmp = stack.top() - tmp;
+  else if (c == '*')
+    tmp = stack.top() * tmp;
+  else if (c == '/')
+  {
+    if (tmp == 0)
+      throw std::runtime_error("Error: Impossible to divided by 0");
+    tmp = stack.top() / tmp;
+  }
+  else
+    throw std::runtime_error("Error: Operator invalid");
 
-    stack.pop();
+  stack.pop();
 
-    if (tmp == -HUGE_VAL || tmp == +HUGE_VAL)
-    {
-        std::cout << "Error: Out of range reached" << std::endl;
-        return false;
-    }
-    stack.push(tmp);
-    return true;
+  if (tmp == -HUGE_VAL || tmp == +HUGE_VAL)
+    throw std::runtime_error("Error: Out of range reached");
+
+  stack.push(tmp);
 }
