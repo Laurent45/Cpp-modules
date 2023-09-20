@@ -6,7 +6,7 @@
 /*   By: lfrederi <lfrederi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:32:50 by lfrederi          #+#    #+#             */
-/*   Updated: 2023/09/20 11:05:43 by lfrederi         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:07:01 by lfrederi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <cctype>
+#include <sys/time.h>
 
 /****************
  * CANONICAL FORM
@@ -44,7 +45,7 @@ PmergeMe::~PmergeMe(void) {}
 
 PmergeMe::PmergeMe(std::string numbers)
 {
-  // Skip the last space
+  // Skip the last spaces
   std::string::reverse_iterator rit=numbers.rbegin();
   for (; rit!=numbers.rend(); ++rit)
   {
@@ -73,29 +74,40 @@ PmergeMe::PmergeMe(std::string numbers)
  ****************/
 
 void  PmergeMe::run()
-{
-  std::cout << "Vector sort: " << std::endl;
+{ 
+  struct timeval startV;
+  struct timeval endV;
+  struct timeval startD;
+  struct timeval endD;
+  size_t size = _vec.size();
+
+  std::cout << "Before: ";
   for (std::vector<int>::iterator it = _vec.begin(); it != _vec.end(); it++)
     std::cout << *it << " ";
   std::cout << std::endl;
 
+  gettimeofday(&startV, NULL);
   sortVector(0, _vec.size() - 1);
+  gettimeofday(&endV, NULL);
 
+  gettimeofday(&startD, NULL);
+  sortDeque(0, _dqe.size() - 1);
+  gettimeofday(&endD, NULL);
+
+  std::cout << "After: ";
   for (std::vector<int>::iterator it = _vec.begin(); it != _vec.end(); it++)
     std::cout << *it << " ";
   std::cout << std::endl;
 
-
-  std::cout << "Deque sort: " << std::endl;
-  for (std::deque<int>::iterator it = _dqe.begin(); it != _dqe.end(); it++)
-    std::cout << *it << " ";
-  std::cout << std::endl;
-
-  sortDeque(0, _dqe.size() - 1);
-
-  for (std::deque<int>::iterator it = _dqe.begin(); it != _dqe.end(); it++)
-    std::cout << *it << " ";
-  std::cout << std::endl;
+  std::cout << "Time to process a range of "
+            << size << " elements with std::vector : "
+            << endV.tv_sec - startV.tv_sec << " s and "
+            << endV.tv_usec - startV.tv_usec << " us" << std::endl;
+            
+  std::cout << "Time to process a range of "
+            << size << " elements with std::deque : "
+            << endD.tv_sec - startD.tv_sec << " s and "
+            << endD.tv_usec - startD.tv_usec << " us" << std::endl;
 }
 
 /******************************************************************************/
